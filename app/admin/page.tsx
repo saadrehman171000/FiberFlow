@@ -32,7 +32,10 @@ export default function AdminDashboard() {
     totalCustomers: 0,
     totalCompanies: 0
   })
-  const [recentSales, setRecentSales] = useState({ sales: [], totalMonthSales: 0 })
+  const [recentSales, setRecentSales] = useState<{ 
+    sales: any[], 
+    totalMonthSales: number 
+  }>({ sales: [], totalMonthSales: 0 })
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -146,6 +149,7 @@ export default function AdminDashboard() {
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                     <Avatar className="h-8 w-8">
+                      <AvatarImage src="/default-avatar.png" alt="User avatar" />
                       <AvatarFallback>AD</AvatarFallback>
                     </Avatar>
                   </Button>
